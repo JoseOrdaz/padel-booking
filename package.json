@@ -9,8 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@devexpress/dx-react-core": "^4.0.2",
+    "@devexpress/dx-react-scheduler": "^4.0.2",
+    "@devexpress/dx-react-scheduler-material-ui": "^4.0.2",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@heroicons/react": "^2.0.12",
     "@material-tailwind/react": "^1.2.4",
+    "@mui/material": "^5.11.3",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

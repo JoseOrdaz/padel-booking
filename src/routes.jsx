@@ -1,10 +1,11 @@
-import { Home, Profile, SignIn, SignUp, Booking, } from "@/pages";
+import { Home, Profile, SignIn, SignUp, Booking } from "@/pages";
 import {
   HomeIcon,
   UserCircleIcon,
   ArrowRightOnRectangleIcon,
   UserPlusIcon,
   DocumentTextIcon,
+  CalendarIcon
 } from "@heroicons/react/24/solid";
 
 export const routes = [
@@ -14,6 +15,12 @@ export const routes = [
     path: "/home",
     element: <Home />,
   },
+  {
+    icon: CalendarIcon,
+    name: "Reservas",
+    path: "/booking",
+    element: <Booking />,
+  }, 
   {
     icon: UserCircleIcon,
     name: "Perfil",
@@ -32,12 +39,7 @@ export const routes = [
     path: "/sign-up",
     element: <SignUp />,
   },
-  {
-    icon: DocumentTextIcon,
-    name: "Reserva",
-    href: "/booking",
-    element: <Booking />,
-  }, 
+
   {
     icon: DocumentTextIcon,
     name: "Contacto",

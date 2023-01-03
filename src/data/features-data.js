@@ -18,14 +18,14 @@ export const featuresData = [
   },
   {
     color: "red",
-    title: "Sistema Play!",
+    title: "¡SISTEMA PLAY!",
     icon: UsersIcon,
     description:
       "Encuentra con quién jugar. Entra en el sistema Play!",
   },
   {
     color: "teal",
-    title: "Escuela de pádel",
+    title: "ESCUELA DE PÁDEL",
     icon: AcademicCapIcon,
     description:
       "Toda la información sobre las clases y sus tarifas. ",
