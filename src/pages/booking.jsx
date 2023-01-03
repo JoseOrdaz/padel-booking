@@ -5,7 +5,6 @@ import {
   BuildingLibraryIcon,
 } from "@heroicons/react/24/solid";
 import { Footer } from "@/widgets/layout";
-import { Reservas } from "/src/components/calendario-reservas";
 
 export function Booking() {
   return (
@@ -105,7 +104,6 @@ export function Booking() {
                     </Typography>
                    
                   </div>
-                  <Reservas></Reservas>
                 </div>
               </div>
             </div>
