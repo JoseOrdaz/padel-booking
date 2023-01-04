@@ -35,8 +35,8 @@ export function Home() {
                 PADEL ELITE ES TU CLUB              </Typography>
           
               <div class="mt-8 flex gap-x-4 sm:justify-center">
-              <a href="#" class="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700">
-                Reservar
+              <a href="#" class="inline-block rounded-lg bg-[var(--color-main)] px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm  hover:bg-[var(--color-second)]">
+                Reservar pista
               </a>
               <a href="#" class="inline-block rounded-lg bg-white px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                 Partidas Abiertas
@@ -83,7 +83,7 @@ export function Home() {
                 Podrás disfrutar de nuestras magníficas 6 pistas de pádel de cristal, 
                 todas de ellas cubiertas. Ademas de nuestro lugar para tomar algo y disfrutar de un buen padel. 
               </Typography>
-              <Button variant="outlined">Ver más</Button>
+              <Button variant="" className="inline-block rounded-lg bg-[var(--color-main)] px-4 py-1.5 font-semibold text-white shadow-sm  hover:bg-[var(--color-second)]">Ver más</Button>
             </div>
             <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
               <Card className="shadow-lg shadow-gray-500/10">
@@ -163,7 +163,7 @@ export function Home() {
           </div>
         </div>
       </section>
-      <section className="relative bg-blue-gray-50/50 py-24 px-4">
+      <section id="contacto" className="relative bg-blue-gray-50/50 py-24 px-4">
         <div className="container mx-auto">
           {/* <PageTitle heading="Build something">
             Put the potentially record low maximum sea ice extent tihs year down
@@ -199,13 +199,13 @@ export function Home() {
               <Input variant="standard" size="lg" label="Nombre" />
               <Input variant="standard" size="lg" label="Email" />
             <Textarea variant="standard" size="lg" label="Mensaje" rows={8} />
-            <Button variant="gradient" size="lg" className="mt-8">
+            <Button size="lg" className="mt-8 inline-block rounded-lg bg-[var(--color-main)] px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm  hover:bg-[var(--color-second)] ">
               Enviar Mensaje
             </Button>
           </form>
         </div>
       </section>
-      <div className="bg-blue-gray-50/50">
+      <div className="bg-[var(--color-main)]">
         <Footer />
       </div>
     </>

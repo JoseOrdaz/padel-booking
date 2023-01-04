@@ -110,7 +110,7 @@ export function Booking() {
           </div>
         </div>
       </section>
-      <div className="bg-blue-gray-50/50">
+      <div className="bg-[var(--color-main)]">
         <Footer />
       </div>
     </>

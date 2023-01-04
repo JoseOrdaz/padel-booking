@@ -40,13 +40,7 @@ export const routes = [
     element: <SignUp />,
   },
 
-  {
-    icon: DocumentTextIcon,
-    name: "Contacto",
-    href: "https://www.material-tailwind.com/docs/react/installation",
-    target: "_blank",
-    element: "",
-  },
+  
 ];
 
 export default routes;
