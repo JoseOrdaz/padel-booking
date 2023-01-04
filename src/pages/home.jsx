@@ -34,11 +34,11 @@ export function Home() {
               <Typography variant="lead" color="white" className="opacity-80">
                 PADEL ELITE ES TU CLUB              </Typography>
           
-              <div class="mt-8 flex gap-x-4 sm:justify-center">
-              <a href="#" class="inline-block rounded-lg bg-[var(--color-main)] px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm  hover:bg-[var(--color-second)]">
+              <div className="mt-8 flex gap-x-4 sm:justify-center">
+              <a href="#" className="inline-block rounded-lg bg-[var(--color-main)] px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm  hover:bg-[var(--color-second)]">
                 Reservar pista
               </a>
-              <a href="#" class="inline-block rounded-lg bg-white px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+              <a href="#" className="inline-block rounded-lg bg-white px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                 Partidas Abiertas
               </a>
             </div>
@@ -83,7 +83,7 @@ export function Home() {
                 Podrás disfrutar de nuestras magníficas 6 pistas de pádel de cristal, 
                 todas de ellas cubiertas. Ademas de nuestro lugar para tomar algo y disfrutar de un buen padel. 
               </Typography>
-              <Button variant="" className="inline-block rounded-lg bg-[var(--color-main)] px-4 py-1.5 font-semibold text-white shadow-sm  hover:bg-[var(--color-second)]">Ver más</Button>
+              <Button variant="gradient" className="inline-block rounded-lg bg-[var(--color-main)] px-4 py-1.5 font-semibold text-white shadow-sm  hover:bg-[var(--color-second)]">Ver más</Button>
             </div>
             <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
               <Card className="shadow-lg shadow-gray-500/10">
@@ -95,23 +95,19 @@ export function Home() {
                   />
                 </CardHeader>
                 <CardBody>
-                  <Typography
-                    variant="h5"
-                    color="blue-gray"
-                    className="mb-3 font-bold"
-                  >
+                  <Typography variant="h5" color="blue-gray" className="mb-3 font-bold">
                     élite 22 PADEL
                   </Typography>
-                  <Typography className="text-blue-gray-500">
-                <p className="flex p-1"><ClockIcon className="h-7 w-7 mr-2 text-blue-gray-300"></ClockIcon>
-                De lunes a domingo de 8:30 a 23:00. Sábados de 14:00. a 16:30 cerrado</p>
+                  <div>
+                    <Typography variant="paragraph" className="flex p-1"><ClockIcon className="h-7 w-7 mr-2 text-blue-gray-300"></ClockIcon>
+                    De lunes a domingo de 8:30 a 23:00. Sábados de 14:00. a 16:30 cerrado</Typography>
 
-                <p className="flex p-1"><MapPinIcon className="h-5 w-5  mr-2 text-blue-gray-300"></MapPinIcon>  
-                Calle Islas Canarias 43. 46988 Paterna (Valencia)</p>
+                    <Typography variant="paragraph"  className="flex p-1"><MapPinIcon className="h-5 w-5  mr-2 text-blue-gray-300"></MapPinIcon>  
+                    Calle Islas Canarias 43. 46988 Paterna (Valencia)</Typography>
 
-                <p className="flex p-1"><PhoneIcon className="h-5 w-5  mr-2 text-blue-gray-300"></PhoneIcon> Tel. 699 34 90 79</p>
-                <p className="flex p-1"><EnvelopeIcon className="h-5 w-5  mr-2 text-blue-gray-300"></EnvelopeIcon> padelelite22@gmail.com</p>
-                  </Typography>
+                    <Typography variant="paragraph"  className="flex p-1"><PhoneIcon className="h-5 w-5  mr-2 text-blue-gray-300"></PhoneIcon> Tel. 699 34 90 79</Typography>
+                    <Typography variant="paragraph"  className="flex p-1"><EnvelopeIcon className="h-5 w-5  mr-2 text-blue-gray-300"></EnvelopeIcon> padelelite22@gmail.com</Typography>
+                  </div>
                 </CardBody>
               </Card>
             </div>
@@ -121,7 +117,7 @@ export function Home() {
       <section className="px-4 pt-20 pb-48">
         <div className="container mx-auto">
           <PageTitle heading="Noticias">
-          Todas nuestras novedades y eventos
+            Todas nuestras novedades y eventos
           </PageTitle>
           <div className="mt-24 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-3">
             {/* {teamData.map(({ img, name, position, socials }) => (
@@ -148,6 +144,7 @@ export function Home() {
                 key={title}
                 img={img}
                 title={title}
+                name={title}
                 position={position}
                 socials={
                   <div className="flex items-center gap-2">
