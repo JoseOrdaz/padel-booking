@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import {useState, useRef } from "react";
 import {
   Card,
   CardHeader,
@@ -12,6 +13,28 @@ import {
 import { SimpleFooter } from "@/widgets/layout";
 
 export function SignUp() {
+  const [terms, setTerms] = useState(true)
+  const nameRef = useRef(); 
+  const emailRef = useRef(); 
+  const pswRef = useRef();
+  const pswRepeatRef = useRef();
+  const termsRef = useRef();
+
+  const clickHandler = (e) => {
+    let terms = termsRef.current.value;
+    let data = {
+      name: nameRef.current.value,
+      email: emailRef.current.value,
+      psw: pswRef.current.value,
+    }
+    console.log(data);
+
+  }
+
+  const termsHandler = (e) =>{
+    setTerms(!termsRef.current.checked)
+  }
+
   return (
     <>
       <img
@@ -31,20 +54,15 @@ export function SignUp() {
             </Typography>
           </CardHeader>
           <CardBody className="flex flex-col gap-4">
-            <Input variant="standard" label="Name" size="lg" />
-            <Input variant="standard" type="email" label="Email" size="lg" />
-            <Input
-              variant="standard"
-              type="password"
-              label="Password"
-              size="lg"
-            />
+            <Input inputRef={nameRef} variant="standard" label="Name" size="lg" />
+            <Input inputRef={emailRef} variant="standard" type="email" label="Email" size="lg" />
+            <Input inputRef={pswRef}  variant="standard" type="password"  label="Password"  size="lg"/>
             <div className="-ml-2.5">
-              <Checkbox label="I agree the Terms and Conditions" />
+              <Checkbox inputRef={termsRef} onInput={termsHandler} label="I agree the Terms and Conditions" />
             </div>
           </CardBody>
           <CardFooter className="pt-0">
-            <Button variant="gradient" fullWidth>
+            <Button variant="gradient" disabled={terms} onClick={clickHandler} fullWidth>
               Sign Up
             </Button>
             <Typography variant="small" className="mt-6 flex justify-center">
