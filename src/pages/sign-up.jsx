@@ -21,12 +21,12 @@ export function SignUp() {
   const termsRef = useRef();
 
   const clickHandler = (e) => {
-    let terms = termsRef.current.value;
     let data = {
       name: nameRef.current.value,
       email: emailRef.current.value,
       psw: pswRef.current.value,
     }
+    
     console.log(data);
 
   }
