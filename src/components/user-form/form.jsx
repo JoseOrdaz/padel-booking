@@ -11,7 +11,7 @@ export default function UserForm() {
     const [ terms, setTerms ] = useState( true );
     const [ step, setStep ] = useState( 0 );
     const [ fieldsComplited, setFieldsComplited ] = useState([]);
-    const [ userData, setUserData ] = useState();
+    const [ userData, setUserData ] = useState({});
 
     const firstNameRef = useRef(); 
     const secondNameRef = useRef(); 
@@ -47,6 +47,7 @@ export default function UserForm() {
     ]
 
     const checkFieldsHandler = (e) => {
+       
         let tab = step;
         let data = userData;
 
@@ -57,9 +58,9 @@ export default function UserForm() {
 
         formFields[step].map( item => {
             const {value} = item.ref.current
-
+            console.log(value)
             if(value.length > 0)
-            data[item.name] = item.ref.current.value
+                data[item.name] = item.ref.current.value
         })
         console.log(data)
 
@@ -68,7 +69,9 @@ export default function UserForm() {
         setStep(++tab);  
     }
 
-    const submitHandler = () => {
+    const submitHandler = (e) => {
+        e.preventDefault()
+
         //send data to db
         console.log(userData);
     }
@@ -79,13 +82,13 @@ export default function UserForm() {
 
     const stepHandler = (n)=>{
         if(fieldsComplited[n] && fieldsComplited[n].checked)
-        setStep(n)
+            setStep(n)
     }
 
     return (
         <>
             <Steps steps={formFields.length} active={step} clicked={stepHandler}/>
-            <form>
+            <form className="flex flex-col gap-4 mt-4">
                 {
                     formFields[step].map( item => (
                         <Input inputRef={item.ref} key={item.name}  type={item.type} variant="standard" label={item.label} size="lg" />
@@ -100,15 +103,14 @@ export default function UserForm() {
                     )
                     : null
                 }
+                <div className="pt-4">
+                    {
+                        step == formFields.length - 1 
+                        ? <Button variant="gradient" type="button" onClick={submitHandler} fullWidth>Sign Up</Button>
+                        : <Button variant="gradient" type="button" onClick={checkFieldsHandler} fullWidth>Next</Button> 
+                    } 
+                </div>
             </form>
-            
-            <div className="pt-4">
-                {
-                    step == formFields.length - 1 
-                    ? <Button variant="gradient" onClick={submitHandler} fullWidth>Sign Up</Button>
-                    : <Button variant="gradient" onClick={checkFieldsHandler} fullWidth>Next</Button> 
-                } 
-            </div>
         </>
     );
 }

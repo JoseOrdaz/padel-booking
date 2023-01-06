@@ -24,7 +24,7 @@ export function SignUp() {
               Sign Up
             </Typography>
           </CardHeader>
-          <CardBody className="flex flex-col gap-4 pb-0">
+          <CardBody className="pb-0">
             <UserForm />
           </CardBody>
           <CardFooter className="pt-0">
