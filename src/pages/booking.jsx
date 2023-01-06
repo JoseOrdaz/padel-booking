@@ -5,12 +5,14 @@ import {
   BuildingLibraryIcon,
 } from "@heroicons/react/24/solid";
 import { Footer } from "@/widgets/layout";
+import { BasicDatePicker} from "/src/components/datapicker";
+
 
 export function Booking() {
   return (
     <>
       <section className="relative block h-[50vh]">
-        <div className="bg-profile-background absolute top-0 h-full w-full bg-[url('/img/fondo-red.jpg')] bg-cover bg-center" />
+        <div className="bg-profile-background absolute top-0 h-full w-full bg-[url('/img/pista-padel-3.jpg')] bg-cover bg-center" />
         <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
       </section>
       <section className="relative bg-blue-gray-50/50 py-16 px-4">
@@ -87,13 +89,9 @@ export function Booking() {
                 <Typography variant="h2" color="blue-gray" className="mb-2">
                   Reservas
                 </Typography>
-                <div className="mb-16 flex items-center justify-center gap-2">
-                  <MapPinIcon className="-mt-px h-4 w-4 text-blue-gray-700" />
-                  <Typography className="font-medium text-blue-gray-700">
-                  Calle Islas Canarias 43. 46988 Paterna (Valencia) 46250 Valencia.
-                  </Typography>
+                <div className="m-6 flex items-center justify-center gap-2">
+                  <BasicDatePicker></BasicDatePicker>
                 </div>
-       
               </div>
 
               <div className="mb-10 border-t border-blue-gray-50 py-6 text-center">
@@ -102,7 +100,12 @@ export function Booking() {
                     <Typography className="mb-8 font-normal text-blue-gray-500">
                     De lunes a domingo de 8:30 a 23:00. Sábados de 14:00. a 16:30 cerrado
                     </Typography>
-                   
+                    <div className="mb-16 flex items-center justify-center gap-2">
+                  <MapPinIcon className="-mt-px h-4 w-4 text-blue-gray-700" />
+                  <Typography className="font-medium text-blue-gray-700">
+                  Calle Islas Canarias 43. 46988 Paterna (Valencia) 46250 Valencia.
+                  </Typography>
+                </div>
                   </div>
                 </div>
               </div>
