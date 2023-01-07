@@ -1,14 +1,29 @@
-import { Avatar, Typography, Button } from "@material-tailwind/react";
+import {useState, useRef } from "react";
+import { Avatar, Typography, Button, Input, Checkbox } from "@material-tailwind/react";
 import {
   MapPinIcon,
   BriefcaseIcon,
   BuildingLibraryIcon,
 } from "@heroicons/react/24/solid";
 import { Footer } from "@/widgets/layout";
-import { BasicDatePicker} from "/src/components/datapicker";
-
+import {VerticalLinearStepper} from "/src/components/VerticalLinearStepper.jsx"
 
 export function Booking() {
+  const dateRef = useRef();
+  const [ bookingfield, setStep ] = useState( 0 );
+
+
+  const formFields = [
+
+    [
+        {ref: dateRef, name: "Selecciona el día", type: "date", label: "Selecciona el día" ,DataView:"2"},
+      
+    ]
+   
+]
+
+
+
   return (
     <>
       <section className="relative block h-[50vh]">
@@ -87,10 +102,12 @@ export function Booking() {
               </div>
               <div className="my-8 text-center">
                 <Typography variant="h2" color="blue-gray" className="mb-2">
-                  Reservas
+                  Reserva pista completa 📆
                 </Typography>
                 <div className="m-6 flex items-center justify-center gap-2">
-                  <BasicDatePicker></BasicDatePicker>
+
+                <VerticalLinearStepper></VerticalLinearStepper>
+
                 </div>
               </div>
 
