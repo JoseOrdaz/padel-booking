@@ -1,33 +1,24 @@
-import {useState, useRef } from "react";
-import { Avatar, Typography, Button, Input, Checkbox } from "@material-tailwind/react";
+import { useState, useRef } from "react";
+import {
+  Avatar,
+  Typography,
+  Button,
+  Input,
+  Checkbox,
+} from "@material-tailwind/react";
 import {
   MapPinIcon,
   BriefcaseIcon,
   BuildingLibraryIcon,
 } from "@heroicons/react/24/solid";
 import { Footer } from "@/widgets/layout";
-import {VerticalLinearStepper} from "/src/components/VerticalLinearStepper.jsx"
+import { VerticalLinearStepper } from "/src/components/booking/VerticalLinearStepper.jsx";
 
 export function Booking() {
-  const dateRef = useRef();
-  const [ bookingfield, setStep ] = useState( 0 );
-
-
-  const formFields = [
-
-    [
-        {ref: dateRef, name: "Selecciona el día", type: "date", label: "Selecciona el día" ,DataView:"2"},
-      
-    ]
-   
-]
-
-
-
   return (
     <>
       <section className="relative block h-[50vh]">
-        <div className="bg-profile-background absolute top-0 h-full w-full bg-[url('/img/pista-padel-3.jpg')] bg-cover bg-center" />
+        <div className="bg-profile-background absolute top-0 h-full w-full bg-[url('/img/pista-padel-4.jpg')] bg-cover bg-center" />
         <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
       </section>
       <section className="relative bg-blue-gray-50/50 py-16 px-4">
@@ -37,18 +28,18 @@ export function Booking() {
               <div className="flex flex-wrap justify-center">
                 <div className="flex w-full justify-center px-4 lg:order-2 lg:w-3/12">
                   <div className="relative">
-                    <div className="-mt-20 w-40">
+                    <div className="shadow-xl0 relative -mt-20 h-full w-full !rounded-full object-cover object-center">
                       <Avatar
-                        src="/img/fondo-red.jpg"
+                        src="/img/pista-padel-4.jpg"
                         alt="Profile picture"
                         variant="circular"
-                        className="h-full w-full shadow-xl"
+                        className="h-[200px] w-[200px] object-cover object-center shadow-xl"
                       />
                     </div>
                   </div>
                 </div>
                 <div className="mt-10 flex w-full justify-center px-4 lg:order-3 lg:mt-0 lg:w-4/12 lg:justify-end lg:self-center">
-                  <Button className="bg-blue-400">Iniciar sesión</Button>
+                  <Button href="/booking" className="bg-[var(--color-main)] hover:bg-[var(--color-second)] shadow-gray-500 hover:shadow-gray-300">Iniciar sesión</Button>
                 </div>
                 <div className="w-full px-4 lg:order-1 lg:w-4/12">
                   <div className="flex justify-center py-4 pt-8 lg:pt-4">
@@ -100,14 +91,12 @@ export function Booking() {
                   </div>
                 </div>
               </div>
-              <div className="my-8 text-center">
+              <div className="my-8 mt-20 text-center">
                 <Typography variant="h2" color="blue-gray" className="mb-2">
-                  Reserva pista completa 📆
+                  Reservar pista 📆
                 </Typography>
-                <div className="m-6 flex items-center justify-center gap-2">
-
-                <VerticalLinearStepper></VerticalLinearStepper>
-
+                <div className="m-auto">
+                  <VerticalLinearStepper></VerticalLinearStepper>
                 </div>
               </div>
 
@@ -115,14 +104,9 @@ export function Booking() {
                 <div className="mt-2 flex flex-wrap justify-center">
                   <div className="flex w-full flex-col items-center px-4 lg:w-9/12">
                     <Typography className="mb-8 font-normal text-blue-gray-500">
-                    De lunes a domingo de 8:30 a 23:00. Sábados de 14:00. a 16:30 cerrado
+                      De lunes a domingo de 8:30 a 23:00. Sábados de 14:00. a
+                      16:30 cerrado
                     </Typography>
-                    <div className="mb-16 flex items-center justify-center gap-2">
-                  <MapPinIcon className="-mt-px h-4 w-4 text-blue-gray-700" />
-                  <Typography className="font-medium text-blue-gray-700">
-                  Calle Islas Canarias 43. 46988 Paterna (Valencia) 46250 Valencia.
-                  </Typography>
-                </div>
                   </div>
                 </div>
               </div>

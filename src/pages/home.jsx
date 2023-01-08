@@ -20,10 +20,10 @@ export function Home() {
     <>
       <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
         <div className="absolute top-0 h-full w-full bg-[url('/img/pista-padel.jpg')] bg-cover bg-center" />
-        <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
+        <div className="absolute top-0 h-full w-full bg-black/60 bg-cover bg-center" />
         <div className="max-w-8xl container relative mx-auto">
           <div className="flex flex-wrap items-center">
-            <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
+            <div className="ml-auto mr-auto max-w-md w-full px-4 text-center lg:w-8/12">
               <Typography
                 variant="h1"
                 color="white"
@@ -31,11 +31,11 @@ export function Home() {
               >
                 RESERVA TU PISTA DE PÁDEL
               </Typography>
-              <Typography variant="lead" color="white" className="opacity-80">
-                PADEL ELITE ES TU CLUB              </Typography>
+              <Typography variant="lead" color="white" className="font-bold text-gray-500">
+                ÉLITE PÁDEL 22 ES TU CLUB</Typography>
           
               <div className="mt-8 flex gap-x-4 sm:justify-center">
-              <a href="#" className="inline-block rounded-lg bg-[var(--color-main)] px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm  hover:bg-[var(--color-second)]">
+              <a href="/booking" className="inline-block rounded-lg bg-[var(--color-main)] px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm  hover:bg-[var(--color-second)]">
                 Reservar pista
               </a>
               <a href="#" className="inline-block rounded-lg bg-white px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20">

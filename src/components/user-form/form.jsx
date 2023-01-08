@@ -28,21 +28,21 @@ export default function UserForm() {
     const formFields = [
         [
             {ref: emailRef, name: "email", type: "email", label: "Email"},
-            {ref: repeatEmailRef, name: "email-repeat", type: "email", label: "Email Repeat"},
+            {ref: repeatEmailRef, name: "email-repeat", type: "email", label: "Confirmar email"},
         ],
         [
-            {ref: firstNameRef, name: "name", type: "text", label: "Name"},
-            {ref: secondNameRef, name: "second-name", type: "text", label: "Second name"},
-            {ref: dateRef, name: "birthday", type: "date", label: "Birthday"},
-            {ref: genderRef, name: "gender", type: "text", label: "Gender"},
+            {ref: firstNameRef, name: "name", type: "text", label: "Nombre"},
+            {ref: secondNameRef, name: "second-name", type: "text", label: "Apellidos"},
+            {ref: dateRef, name: "birthday", type: "date", label: "Fecha de nacimiento"},
+            {ref: genderRef, name: "gender", type: "text", label: "Género"},
         ],
         [
-            {ref: levelPlayerRef, name: "level", type: "text", label: "Level"},
-            {ref: sidePlayerRef, name: "side-player", type: "text", label: "Position"},
+            {ref: levelPlayerRef, name: "level", type: "text", label: "Nivel"},
+            {ref: sidePlayerRef, name: "side-player", type: "text", label: "Posición"},
         ],
         [
-            {ref: pswRef, name: "password",  type: "password", label: "Password"},
-            {ref: pswRepeatRef, name: "password-repeat",  type: "password", label: "Password repeat"},
+            {ref: pswRef, name: "password",  type: "password", label: "Contraseña"},
+            {ref: pswRepeatRef, name: "password-repeat",  type: "password", label: "Repitir contraseña"},
         ] 
     ]
 
@@ -98,7 +98,7 @@ export default function UserForm() {
                     step ==  formFields.length - 1 
                     ? (
                         <div className="-ml-2.5">
-                            <Checkbox inputRef={termsRef} onInput={termsHandler} label="I agree the Terms and Conditions" />
+                            <Checkbox inputRef={termsRef} className="checked:bg-[var(--color-main)] checked:border-0 focus:border-[var(--color-main)]" onInput={termsHandler} label="Acepto los Términos y Condiciones" />
                         </div>
                     )
                     : null
@@ -106,8 +106,8 @@ export default function UserForm() {
                 <div className="pt-4">
                     {
                         step == formFields.length - 1 
-                        ? <Button variant="gradient" type="button" onClick={submitHandler} fullWidth>Sign Up</Button>
-                        : <Button variant="gradient" type="button" onClick={checkFieldsHandler} fullWidth>Next</Button> 
+                        ? <Button className="bg-[var(--color-main)] hover:bg-[var(--color-second)] shadow-gray-500 hover:shadow-gray-300" type="button" onClick={submitHandler} fullWidth>Registrarse</Button>
+                        : <Button className="bg-[var(--color-main)] hover:bg-[var(--color-second)] shadow-gray-500 hover:shadow-gray-300" type="button" onClick={checkFieldsHandler} fullWidth>Siguiente</Button> 
                     } 
                 </div>
             </form>
