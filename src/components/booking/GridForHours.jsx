@@ -1,11 +1,9 @@
 import * as React from "react";
-import {useState, useRef } from "react";
+import { useState, useRef } from "react";
 import Grid from "@mui/material/Grid";
 import { Checkbox } from "@material-tailwind/react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import QueryBuilderIcon from "@mui/icons-material/QueryBuilder";
-
 
 const hours = [
   {
@@ -38,7 +36,9 @@ export function GridForHours() {
   const [alignment, setAlignment] = React.useState("web");
   const termsRef = useRef();
 
-  const termsHandler = (e) =>{setTerms(!termsRef.current.checked)}
+  const termsHandler = (e) => {
+    setTerms(!termsRef.current.checked);
+  };
 
   const handleChange = (event, newAlignment) => {
     setAlignment(newAlignment);
@@ -60,19 +60,33 @@ export function GridForHours() {
           >
             <ToggleButton value={ours.value}>
               {ours.our}
-              <QueryBuilderIcon
-                className="ml-2"
-                sx={{ fontSize: 16 }}
-              ></QueryBuilderIcon>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="h-4 w-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
             </ToggleButton>
           </ToggleButtonGroup>
         </Grid>
       ))}
       <div className="ml-7 mt-5">
-        <Checkbox inputRef={termsRef} className="checked:bg-[var(--color-main)] checked:border-0" onInput={termsHandler} label="Ver todo el día" />
+        <Checkbox
+          inputRef={termsRef}
+          className="checked:border-0 checked:bg-[var(--color-main)]"
+          onInput={termsHandler}
+          label="Ver todo el día"
+        />
       </div>
     </Grid>
-    
   );
 }
 
