@@ -29,15 +29,15 @@ export function CardsPistas() {
   return (
     <div className="divide-slate-100 divide-y">
       {pistas.map((pista) => (
-        <div class="group mt-10 items-center justify-center space-x-6 rounded-xl bg-white bg-opacity-50 p-4 shadow-xl hover:rounded-2xl sm:flex">
+        <div key={pista.imagen} className="group mt-10 items-center justify-center space-x-6 rounded-xl bg-white bg-opacity-50 p-4 shadow-xl hover:rounded-2xl sm:flex">
           <img
-            class="mx-auto block h-auto w-3/12 rounded-lg"
+            className="mx-auto block h-auto w-3/12 rounded-lg"
             alt="art cover"
             loading="lazy"
             src={pista.imagen}
           />
-          <div class="p-5 pl-0 sm:w-8/12">
-            <div class="text-grey-500 my-4 flex flex-row  space-x-1">
+          <div className="p-5 pl-0 sm:w-8/12">
+            <div className="text-grey-500 my-4 flex flex-row  space-x-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -54,54 +54,54 @@ export function CardsPistas() {
                   d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"
                 />
               </svg>
-              <p class="text-xs">{pista.fecha}</p>
+              <p className="text-xs">{pista.fecha}</p>
             </div>
-            <div class="space-y-2">
-              <div class="space-y-4">
-                <h4 class="text-justify text-xl font-semibold text-[var(--color-main)]">
+            <div className="space-y-2">
+              <div className="space-y-4">
+                <h4 className="text-justify text-xl font-semibold text-[var(--color-main)]">
                   {pista.tipoPista}
                 </h4>
               </div>
-              <div class="flex items-center space-x-4">
-                <div class="flex gap-3 space-y-1">
-                  <span class="text-sm">Pista Nº {pista.numPista}</span>
+              <div className="flex items-center space-x-4">
+                <div className="flex gap-3 space-y-1">
+                  <span className="text-sm">Pista Nº {pista.numPista}</span>
                 </div>
-                <div class="flex gap-3 space-y-1">
-                  <span class="text-sm font-bold text-green-800">
+                <div className="flex gap-3 space-y-1">
+                  <span className="text-sm font-bold text-green-800">
                     Precio {pista.precio} €
                   </span>
                 </div>
               </div>
 
-              <div class="flex items-center justify-between space-x-4">
-                <div class="text-grey-500 my-4 flex flex-row  space-x-1">
+              <div className="flex items-center justify-between space-x-4">
+                <div className="text-grey-500 my-4 flex flex-row  space-x-1">
                   <svg
                     stroke="currentColor"
                     fill="none"
-                    stroke-width="0"
+                    strokeWidth="0"
                     viewBox="0 0 24 24"
                     height="1em"
                     width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                     ></path>
                   </svg>
-                  <p class="text-xs">{pista.duracion} minutos</p>
+                  <p className="text-xs">{pista.duracion} minutos</p>
                 </div>
 
-                <div class="flex flex-row space-x-1">
-                  <div class="shadow- flex cursor-pointer flex-row items-center justify-center space-x-2 rounded-xl bg-green-500 px-3 py-1 text-center text-white shadow-lg shadow-green-600">
+                <div className="flex flex-row space-x-1">
+                  <div className="shadow- flex cursor-pointer flex-row items-center justify-center space-x-2 rounded-xl bg-green-500 px-3 py-1 text-center text-white shadow-lg shadow-green-600">
                     <svg
                       stroke="currentColor"
                       fill="currentColor"
-                      stroke-width="0"
+                      strokeWidth="0"
                       viewBox="0 0 1024 1024"
-                      class="text-xl"
+                      className="text-xl"
                       height="1em"
                       width="1em"
                       xmlns="http://www.w3.org/2000/svg"
