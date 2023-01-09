@@ -15,16 +15,15 @@ export function SignIn() {
   return (
     <>
       <img
-        src="/img/background-2.jpg"
+        src="/img/top-vista-padel.jpg"
         className="absolute inset-0 z-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 z-0 h-full w-full bg-black/50" />
+      <div className="absolute inset-0 z-0 h-full w-full bg-black/60" />
       <div className="container mx-auto p-4">
         <Card className="absolute top-2/4 left-2/4 w-full max-w-[24rem] -translate-y-2/4 -translate-x-2/4">
           <CardHeader
-            variant="gradient"
-            color="blue"
-            className="mb-4 grid h-28 place-items-center"
+            variant="gradient" 
+            className="bg-[var(--color-main)] mb-4 grid h-28 place-items-center"
           >
             <Typography variant="h3" color="white">
               Iniciar sesión
@@ -39,11 +38,11 @@ export function SignIn() {
               size="lg"
             />
             <div className="-ml-2.5">
-              <Checkbox label="Recuérdame" />
+              <Checkbox className="checked:bg-[var(--color-main)] checked:border-0 focus:border-[var(--color-main)]" label="Recuérdame" />
             </div>
           </CardBody>
           <CardFooter className="pt-0">
-            <Button variant="gradient" fullWidth>
+            <Button className="bg-[var(--color-main)] hover:bg-[var(--color-second)] shadow-gray-500 hover:shadow-gray-300" fullWidth>
              Iniciar sesión
             </Button>
             <Typography variant="small" className="mt-6 flex justify-center">
@@ -52,8 +51,7 @@ export function SignIn() {
                 <Typography
                   as="span"
                   variant="small"
-                  color="blue"
-                  className="ml-1 font-bold"
+                  className="text-[var(--color-second)] ml-1 font-bold"
                 >
                   Regístrate
                 </Typography>

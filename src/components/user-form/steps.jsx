@@ -13,7 +13,7 @@ export default function Steps({steps, active, clicked}){
                         classes = "bg-green-400 w-[24px] h-[24px]"
                         content = <CheckCircleIcon color="white" size={24} />
                     }else{
-                        classes = i == active ? "bg-blue-400 w-[30px] h-[30px]" : "bg-gray-300 w-[24px] h-[24px]";
+                        classes = i == active ? "bg-[var(--color-main)] w-[30px] h-[30px]" : "bg-gray-300 w-[24px] h-[24px]";
                         content = <span className="absolute top-2/4 left-2/4 text-xs translate-y-[-40%] translate-x-[-50%] text-white font-semibold">{i + 1} </span>
                     }
 

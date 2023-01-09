@@ -22,12 +22,6 @@ export const routes = [
     element: <Booking />,
   }, 
   {
-    icon: UserCircleIcon,
-    name: "Perfil",
-    path: "/profile",
-    element: <Profile />,
-  },
-  {
     icon: ArrowRightOnRectangleIcon,
     name: "Iniciar Sesión",
     path: "/sign-in",
@@ -38,6 +32,12 @@ export const routes = [
     name: "Registrarse",
     path: "/sign-up",
     element: <SignUp />,
+  },
+  {
+    icon: UserCircleIcon,
+    name: "Intranet",
+    path: "/profile",
+    element: <Profile />,
   },
 
   

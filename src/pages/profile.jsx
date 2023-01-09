@@ -10,8 +10,8 @@ export function Profile() {
   return (
     <>
       <section className="relative block h-[50vh]">
-        <div className="bg-profile-background absolute top-0 h-full w-full bg-[url('/img/background-1.jpg')] bg-cover bg-center" />
-        <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
+        <div className="bg-profile-background absolute top-0 h-full w-full bg-[url('/img/people-playing-padel.jpg')] bg-cover bg-center" />
+        <div className="absolute top-0 h-full w-full bg-black/60 bg-cover bg-center" />
       </section>
       <section className="relative bg-blue-gray-50/50 py-16 px-4">
         <div className="container mx-auto">
@@ -23,7 +23,7 @@ export function Profile() {
 
                     <div className="-mt-20 relative object-cover object-center !rounded-full h-full w-full shadow-xl0">
                       <Avatar
-                        src="/img/jugador-padel-2.jpg"
+                        src="/img/jugador-padel.jpg"
                         alt="Profile picture"
                         variant="circular"
                         className="h-[200px] w-[200px] shadow-xl object-cover object-center"
