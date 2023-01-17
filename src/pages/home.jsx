@@ -34,7 +34,7 @@ export function Home() {
               <Typography variant="lead" color="white" className="font-bold text-gray-500">
                 ÉLITE PÁDEL 22 ES TU CLUB</Typography>
           
-              <div className="mt-8 flex gap-x-4 sm:justify-center">
+              <div className="mt-8 flex gap-x-4 justify-center">
               <a href="/booking" className="inline-block rounded-lg bg-[var(--color-main)] px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm  hover:bg-[var(--color-second)]">
                 Reservar pista
               </a>

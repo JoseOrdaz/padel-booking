@@ -12,7 +12,9 @@ import {
   BuildingLibraryIcon,
 } from "@heroicons/react/24/solid";
 import { Footer } from "@/widgets/layout";
-import { VerticalLinearStepper } from "/src/components/booking/VerticalLinearStepper.jsx";
+import { ReservaPistaCompleta } from "/src/components/booking/ReservaPistaCompleta.jsx";
+
+
 
 export function Booking() {
   return (
@@ -23,7 +25,7 @@ export function Booking() {
       </section>
       <section className="relative bg-blue-gray-50/50 py-16 px-4">
         <div className="container mx-auto">
-          <div className="relative mb-6 -mt-64 flex w-full min-w-0 flex-col break-words rounded-3xl bg-white shadow-xl shadow-gray-500/5">
+          <div className="relative mb-6 -mt-32 lg:-mt-64 flex w-full min-w-0 flex-col break-words rounded-3xl bg-white shadow-xl shadow-gray-500/5">
             <div className="px-6">
               <div className="flex flex-wrap justify-center">
                 <div className="flex w-full justify-center px-4 lg:order-2 lg:w-3/12">
@@ -95,8 +97,8 @@ export function Booking() {
                 <Typography variant="h2" color="blue-gray" className="mb-2">
                   Reservar pista 📆
                 </Typography>
-                <div className="m-auto">
-                  <VerticalLinearStepper></VerticalLinearStepper>
+                <div className="mt-20 m-auto w-full py-20' lg:order-1 lg:w-4/12">
+                  <ReservaPistaCompleta></ReservaPistaCompleta>
                 </div>
               </div>
 
