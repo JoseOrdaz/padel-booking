@@ -7,8 +7,8 @@ import {
     Option
 } from "@material-tailwind/react";
 
-import Steps from "@/components/user-form/steps.jsx";
 
+import Steps from "@/components/user-form/steps.jsx";
 import CardsPistas from "@/components/booking/CardsPistas";
 
 const getYearLimit = () => {
@@ -24,12 +24,13 @@ const getYearLimit = () => {
 }
 
 export function ReservaPistaCompleta() {
-
     const [ step, setStep ] = useState( 0 );
     const [ formData, setFormData ] = useState({
        
         DiaReserva: { type: "date", label: "Selecciona día", value:"" , max: getYearLimit()},
-        TipoPista: { type: "select", label: "Tipo de pista", options:[ "Individual", "Dobles", "Todas" ] , value:"" },
+        TipoPista: { type: "select", label: "Tipo de pista", options:[ "Individual", "Dobles" ] , value:"" },
+        terms: { type: "checkbox", label: "I agree the Terms and Conditions", value: "" } ,
+
         HoraReserva: { 
             type: "select",
             label: "Selecciona la hora", 
@@ -39,53 +40,87 @@ export function ReservaPistaCompleta() {
                 ] , 
             value:""
         },  
-        todoElDia: { type: "checkbox", label: "Ver todo el día", value: "" } ,
 
        
     })
 
     const stepHandler = (n)=>{
-        // if(fieldsComplited[n] && fieldsComplited[n].checked)
-             setStep(n)
-     }
- 
- 
+       // if(fieldsComplited[n] && fieldsComplited[n].checked)
+            setStep(n)
+    }
 
- 
+    const checkValue = (e) => {
+        const value = e.target.value;
+        const name = e.target.name;
+        let data = formData;
+        if(value === "111" ){
+            data[name].error = true;
+            e.target.focus()
+        }else{
+            data[name].error = false;
+            data[name].success = true;
+        }
 
+        setFormData({...data})
+    }
+
+    const inputHandler = (e) => {
+        const value = e.target.value;
+        const name = e.target.name;
+
+        let data = formData;
+        data[name].value = value
+
+        setFormData({...data})
+    }
+
+    const selectHandler = (val, name) => {
+        let data = formData;
+        data[name].value = val
+
+        setFormData({...data})
+    }
+
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        if(step < maxStep){
+            let st = step;
+            setStep(++st);
+            return
+        }
+        const data = {
+            email: formData.email.value,
+            firstName: formData.firstName.value,
+            lastName: formData.lastName.value,
+            birthday: formData.birthday.value,
+            gender: formData.gender.value,
+            level: formData.level.value,
+            playerPosition: formData.playerPosition.value,
+            password: formData.password.value,
+        }
+        
+        console.log(data)
+    }
+
+    let start = step * 1;
+    let end
+    let formLength = Object.keys(formData).length;
+    let maxStep = 3;
  
-     const submitHandler = (e) => {
-         e.preventDefault();
-         if(step < maxStep){
-             let st = step;
-             setStep(++st);
-             return
-         }
-         const data = {
-            
-         }
-         
-     }
- 
-     let start = step * 1;
-     let end
-     let formLength = Object.keys(formData).length;
-     let maxStep = 3;
-  
-     if(step == maxStep){
-         end = formLength;
-     }else{
-         end = step * 1 + 4
-     }
-     const fields = Object.keys(formData).slice(start, end);
- 
+    if(step == maxStep){
+        end = formLength;
+    }else{
+        end = step * 1 + 1
+    }
+    const fields = Object.keys(formData).slice(start, end);
 
     return (
         <>
-            <Steps steps={maxStep} active={step} clicked={stepHandler}/>
+            <Steps steps={maxStep + 1} active={step} clicked={stepHandler}/>
 
-            {step == 0 ? (
-                <form className="flex flex-col gap-4 mt-8" onSubmit={submitHandler}>
+            {step - 3 ? (
+            <form className="flex flex-col gap-4 mt-8" onSubmit={submitHandler}>
                 {
                     fields.map( (key, i) => {
                         if(formData[key].type == "checkbox"){
@@ -121,6 +156,7 @@ export function ReservaPistaCompleta() {
                                     variant="standard"
                                     label={formData[key].label}
                                     size="lg"
+                                    onChange={inputHandler}
                                     defaultValue={formData[key].value}
                                     min={formData[key].min}
                                     max={formData[key].max}
@@ -128,6 +164,7 @@ export function ReservaPistaCompleta() {
                                     maxLength={formData[key].maxLength}
                                     error={formData[key].error}
                                     success={formData[key].success}
+                                    onBlur={checkValue}
                                     required
                                 />
                             )
@@ -138,7 +175,7 @@ export function ReservaPistaCompleta() {
                     <button
                         type="submit"
                         className="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-blue-500 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none w-full">{
-                        start == 1 ? "Atras" : "Siguiente"
+                        step == 3 ? "Sign Up" : "Siguiente"
                     }</button>
                 </div>
             </form> ) : <CardsPistas></CardsPistas>}
